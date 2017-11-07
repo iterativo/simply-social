@@ -23,8 +23,11 @@
         "eslint": "^4.10.0",
         "eslint-loader": "^1.9.0",
         "eslint-plugin-react": "^7.4.0",
+        "file-loader": "^1.1.5",
+        "img-loader": "^2.0.0",
         "jest": "^21.2.1",
         "react-bootstrap": "^0.31.5",
+        "url-loader": "^0.6.2",
         "webpack": "^3.8.1",
         "webpack-dev-server": "^2.9.4"
     },

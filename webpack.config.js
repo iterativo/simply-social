@@ -31,6 +31,13 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loaders: [
+                    'url-loader?limit=10000',
+                    'img-loader',
+                ],
+            },
         ],
     },
     devtool: 'eval-source-map',
