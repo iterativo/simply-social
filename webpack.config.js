@@ -38,6 +38,13 @@ module.exports = {
                     'img-loader',
                 ],
             },
+            {
+                test: /\.scss$/,
+                loaders: [
+                    'css-loader',
+                    'sass-loader',
+                ],
+            },
         ],
     },
     devtool: 'eval-source-map',

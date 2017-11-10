@@ -1,16 +1,19 @@
 import React from 'react';
-import { PageHeader } from 'react-bootstrap';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+import './app.scss';
 import Header from './header';
 import Content from './content';
 import Footer from './footer';
 
 const App = () => (
-    <div>
-        <Header />
-        <Content />
-        <Footer />
-    </div>
+    <MuiThemeProvider>
+        <div>
+            <Header />
+            <Content />
+            <Footer />
+        </div>
+    </MuiThemeProvider>
 );
 
 export default App;

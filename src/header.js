@@ -1,10 +1,13 @@
 import React from 'react';
+import AppBar from 'material-ui/AppBar';
 
+import logo from '../images/logo.png';
 import profileBackground from '../images/profile-background2.jpg';
 import profilePhoto from '../images/profile-photo.jpeg';
 
 // TODO Provide via data provider
 const profile = {
+    logo: logo,
     backgroundImageUrl: `url(${profileBackground})`,
     profilePhotoUrl: profilePhoto,
     firstName: 'Jimmy',
@@ -33,13 +36,42 @@ const profilePhotoStyle = {
     borderRadius: '4px',
 };
 
+// TODO Move to a separate file
+const styles = {
+    appbar: {
+        title: {
+            simply: {
+                color: '#716f6f',
+                fontSize: '0.75em',
+            },
+            social: {
+                color: '#bfbfbf',
+                fontSize: '0.75em',
+            },
+        },
+        background: {
+            backgroundColor: '#262728',
+        },
+        logo: {
+            height: '30px',
+            position: 'relative',
+            transform: 'translateY(28%)',
+        },
+    },
+};
+
 const Header = () => (
-    <header className="navbar">
-        <div className="container">
-            <div className="navbar-header">
-                <a href="/" className="navbar-brand">simplysocial</a>
-            </div>
-        </div>
+    <div>
+        <AppBar
+            title={
+                <div>
+                    <span style={styles.appbar.title.simply}>simply</span>
+                    <span style={styles.appbar.title.social}>social</span>
+                </div>
+            }
+            style={styles.appbar.background}
+            iconElementLeft={<img src={profile.logo} style={styles.appbar.logo} alt="Logo" />}
+        />
         <div className="jumbotron" style={profileBackgroundStyle}>
             <div className="container">
                 <div className="row">
@@ -49,33 +81,23 @@ const Header = () => (
                         src={profile.profilePhotoUrl}
                     />
                 </div>
-                <div className="row">
-                    <div className="span12 text-center">
-                        {`${profile.firstName} ${profile.lastName}`}
-                    </div>
+                <div className="row text-center">
+                    {`${profile.firstName} ${profile.lastName}`}
                 </div>
-                <div className="row">
-                    <div className="span12 text-center">
-                        {profile.headline}
-                    </div>
+                <div className="row text-center">
+                    {profile.headline}
                 </div>
-                <div className="row">
-                    <div className="span12 text-center">
-                        <a href={profile.website.url}>{profile.website.text}</a>
-                    </div>
+                <div className="row text-center">
+                    <a href={profile.website.url}>{profile.website.text}</a>
                 </div>
-                <div className="row">
-                    <div className="span3"></div>
-                    <div className="span6 text-center">
-                        <span>{`${profile.firstName}'s feed`}</span>
-                        <span>{`${profile.followers} followers`}</span>
-                        <span>{`${profile.following} following`}</span>
-                    </div>
-                    <div className="span3"></div>
+                <div className="row text-center">
+                    <span>{`${profile.firstName}'s feed`}</span>
+                    <span>{`${profile.followers} followers`}</span>
+                    <span>{`${profile.following} following`}</span>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 );
 
 export default Header;
