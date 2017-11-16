@@ -21,21 +21,6 @@ const profile = {
     following: '517',
 };
 
-// TODO Move this to scss
-const profileBackgroundStyle = {
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 300px',
-    backgroundImage: profile.backgroundImageUrl,
-    color: '#ffffff',
-};
-
-// TODO Move this to scss
-const profilePhotoStyle = {
-    width: '80px',
-    height: '80px',
-    borderRadius: '4px',
-};
-
 // TODO Move to a separate file
 const styles = {
     appbar: {
@@ -58,6 +43,19 @@ const styles = {
             transform: 'translateY(28%)',
         },
     },
+    profile:{
+        photo: {
+            width: '80px',
+            height: '80px',
+            borderRadius: '3px',
+        },
+        background: {
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100% 300px',
+            backgroundImage: profile.backgroundImageUrl,
+            color: '#ffffff',
+        },
+    },
 };
 
 const Header = () => (
@@ -72,12 +70,12 @@ const Header = () => (
             style={styles.appbar.background}
             iconElementLeft={<img src={profile.logo} style={styles.appbar.logo} alt="Logo" />}
         />
-        <div className="jumbotron" style={profileBackgroundStyle}>
+        <div className="jumbotron" style={styles.profile.background}>
             <div className="container">
                 <div className="row">
                     <img
                         className="center-block"
-                        style={profilePhotoStyle}
+                        style={styles.profile.photo}
                         src={profile.profilePhotoUrl}
                     />
                 </div>
