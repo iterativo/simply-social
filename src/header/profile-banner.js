@@ -20,40 +20,50 @@ const profile = {
 
 // TODO Move to a separate file
 const styles = {
-    profile:{
-        photo: {
-            height: '80px',
-            borderRadius: '3px',
-        },
-        background: {
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100% 300px',
-            backgroundImage: profile.backgroundImageUrl,
-            color: '#ffffff',
-        },
+    photo: {
+        height: '80px',
+        borderRadius: '3px',
+        display: 'block',
+        margin: '0 auto',
+    },
+    background: {
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100% 300px',
+        backgroundImage: profile.backgroundImageUrl,
+        color: '#ffffff',
+        padding: '48px 0',
+        marginBottom: '30px',
+    },
+    name: {
+        textAlign: 'center',
+    },
+    headline: {
+        textAlign: 'center',
+    },
+    website: {
+        textAlign: 'center',
+    },
+    links: {
+        textAlign: 'center',
     },
 };
 
 const ProfileBanner = () => (
-    <div className="jumbotron" style={styles.profile.background}>
-        <div className="container">
-            <div className="row">
-                <img
-                    className="center-block"
-                    style={styles.profile.photo}
-                    src={profile.photo}
-                />
+    <div style={styles.background}>
+        <div>
+            <div>
+                <img style={styles.photo} src={profile.photo} />
             </div>
-            <div className="row text-center">
+            <div style={styles.name}>
                 {`${profile.firstName} ${profile.lastName}`}
             </div>
-            <div className="row text-center">
+            <div style={styles.headline}>
                 {profile.headline}
             </div>
-            <div className="row text-center">
+            <div style={styles.website}>
                 <a href={profile.website.url}>{profile.website.text}</a>
             </div>
-            <div className="row text-center">
+            <div style={styles.links}>
                 <span>{`${profile.firstName}'s feed`}</span>
                 <span>{`${profile.followers} followers`}</span>
                 <span>{`${profile.following} following`}</span>

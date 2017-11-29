@@ -58,6 +58,7 @@ const styles = {
     },
     photo: {
         height: '25px',
+        width: '26px',
         borderRadius: '3px',
     },
     arrowdown: {
