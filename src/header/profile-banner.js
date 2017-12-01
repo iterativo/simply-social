@@ -33,19 +33,42 @@ const styles = {
         color: '#ffffff',
         padding: '48px 0',
         marginBottom: '30px',
+        display: 'flex',
+        justifyContent: 'center',
     },
     name: {
         textAlign: 'center',
+        marginTop: '15px',
+        fontSize: '20px',
     },
     headline: {
         textAlign: 'center',
     },
     website: {
         textAlign: 'center',
+        link: {
+            color: '#fbbc40',
+        },
     },
     links: {
+        display: 'flex',
         textAlign: 'center',
+        transform: 'translateY(212%)',
+        fontSize: '9px',
+        textTransform: 'uppercase',
     },
+    link: {
+        margin: '0 45px',
+        paddingRight: '10px',
+        paddingLeft: '10px',
+    },
+    linkActive: {
+        margin: '0 55px',
+        paddingBottom: '7px',
+        paddingRight: '10px',
+        paddingLeft: '10px',
+        borderBottom: '3px solid #0acc8f',
+    }
 };
 
 const ProfileBanner = () => (
@@ -61,12 +84,17 @@ const ProfileBanner = () => (
                 {profile.headline}
             </div>
             <div style={styles.website}>
-                <a href={profile.website.url}>{profile.website.text}</a>
+                <a
+                    style={styles.website.link}
+                    href={profile.website.url}
+                >
+                    {profile.website.text}
+                </a>
             </div>
             <div style={styles.links}>
-                <span>{`${profile.firstName}'s feed`}</span>
-                <span>{`${profile.followers} followers`}</span>
-                <span>{`${profile.following} following`}</span>
+                <div style={styles.linkActive}>{`${profile.firstName}'s feed`}</div>
+                <div style={styles.link}>{`${profile.followers} followers`}</div>
+                <div style={styles.link}>{`${profile.following} following`}</div>
             </div>
         </div>
     </div>
