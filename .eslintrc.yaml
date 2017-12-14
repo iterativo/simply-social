@@ -20,9 +20,9 @@ rules:
     no-whitespace-before-property: 2
     prefer-arrow-callback: 2
     prefer-template: 2
-    quotes: [2, single]
-    semi: [2, always]
-    space-before-blocks: 2
+    quotes: [1, single]
+    semi: [1, always]
+    space-before-blocks: 1
 
     react/jsx-uses-vars: 2
     react/jsx-no-duplicate-props: 2
