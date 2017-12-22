@@ -10,7 +10,29 @@ const stubbedInitializationData = {
         logo: logo,
         bubblePlus: bubblePlus,
         photo: profilePhoto,
-    }
+    },
+    posts: [
+        {
+            id: 1,
+            by: {
+                name: 'Jimmy Fallon',
+                profilePhotoUrl: profilePhoto,
+            },
+            text: 'Back to work!',
+            timeAgo: '20d',
+            liked: true,
+        },
+        {
+            id: 2,
+            by: {
+                name: 'Jimmy Fallon',
+                profilePhotoUrl: profilePhoto,
+            },
+            text: 'On vacation!',
+            timeAgo: '30d',
+            liked: false,
+        },
+    ],
 };
 
 const initialize = () => {
@@ -22,5 +44,5 @@ const initialize = () => {
 };
 
 export const actions = {
-    initialize: initialize,
+    initialize,
 };

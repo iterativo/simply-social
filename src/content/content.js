@@ -1,37 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import Share from 'mui-icons/cmdi/reply';
 import Heart from 'mui-icons/cmdi/heart';
-
-import profilePhoto from '../images/profile-photo.jpeg';
-
-// TODO Provide via data provider
-const content = {
-    posts: [
-        {
-            id: 1,
-            by: {
-                name: 'Jimmy Fallon',
-                profilePhotoUrl: profilePhoto,
-            },
-            text: 'Back to work!',
-            timeAgo: '20d',
-            liked: true,
-        },
-        {
-            id: 2,
-            by: {
-                name: 'Jimmy Fallon',
-                profilePhotoUrl: profilePhoto,
-            },
-            text: 'On vacation!',
-            timeAgo: '30d',
-            liked: false,
-        },
-    ],
-};
 
 // TODO Move to styles file
 const styles = {
@@ -73,13 +46,13 @@ const styles = {
     },
 };
 
-const Content = () => (
+const Content = ({ posts }) => (
     <div>
-        {content.posts.map(p => (
+        {posts.map(p => (
             <Card key={p.id} style={styles.card}>
                 <div style={styles.main}>
                     <Avatar
-                        src={profilePhoto}
+                        src={p.by.profilePhotoUrl}
                         style={styles.header.avatar}
                     />
                     <div>
@@ -116,5 +89,9 @@ const Content = () => (
         ))}
     </div>
 );
+
+Content.propTypes = {
+    posts: PropTypes.array,
+};
 
 export default Content;

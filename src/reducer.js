@@ -4,6 +4,7 @@ import { INITIALIZED } from './actions';
 
 const initialState = {
     profile: {},
+    posts: [],
 };
 
 const reducer = (state = initialState, action) => {

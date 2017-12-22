@@ -23,8 +23,8 @@ class App extends React.Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <Header viewModel={data.profile} />
-                    <Content />
+                    <Header profile={data.profile} />
+                    <Content posts={data.posts} />
                     <Footer />
                 </div>
             </MuiThemeProvider>
